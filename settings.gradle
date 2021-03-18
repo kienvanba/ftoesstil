@@ -1,2 +1,4 @@
+include ':ProtobufDecoder'
+include ':Logger'
 include ':app'
 rootProject.name = "Fossil Test"
