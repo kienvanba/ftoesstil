@@ -4,5 +4,5 @@ data class BnazConfig(
     val traceEnabled: Boolean = true,
     val dateTimePattern: String? = "dd-MM-yyyy HH:mm:ss",
     val showThreadId: Boolean = true,
-    val productionLogDisabled: Boolean = true,
+    val logEnabled: Boolean = true,
 )

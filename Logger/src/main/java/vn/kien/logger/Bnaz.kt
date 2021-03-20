@@ -104,22 +104,32 @@ object Bnaz {
     }
 
     fun i(obj: Any?) {
-        Log.i(tag, generateLogMsg(obj))
+        if (config?.logEnabled == true) {
+            Log.i(tag, generateLogMsg(obj))
+        }
     }
 
     fun e(obj: Any?) {
-        Log.e(tag, generateLogMsg(obj))
+        if (config?.logEnabled == true) {
+            Log.e(tag, generateLogMsg(obj))
+        }
     }
 
     fun d(obj: Any?) {
-        Log.d(tag, generateLogMsg(obj))
+        if (config?.logEnabled == true) {
+            Log.d(tag, generateLogMsg(obj))
+        }
     }
 
     fun w(obj: Any?) {
-        Log.w(tag, generateLogMsg(obj))
+        if (config?.logEnabled == true) {
+            Log.w(tag, generateLogMsg(obj))
+        }
     }
 
     fun wtf(obj: Any?) {
-        Log.wtf(tag, generateLogMsg(obj))
+        if (config?.logEnabled == true) {
+            Log.wtf(tag, generateLogMsg(obj))
+        }
     }
 }

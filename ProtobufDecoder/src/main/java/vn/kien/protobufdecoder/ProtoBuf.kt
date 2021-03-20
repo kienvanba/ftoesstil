@@ -171,10 +171,3 @@ object ProtoBuf {
         return data
     }
 }
-
-fun main() {
-    println(ProtoBuf.decode("0a0d08f92712024f4b188a8c06204e120774657374696e67"))
-    println(ProtoBuf.decode("089601"))
-    println(ProtoBuf.decode("120774657374696e6777"))
-    println(ProtoBuf.decode("08ac02"))
-}

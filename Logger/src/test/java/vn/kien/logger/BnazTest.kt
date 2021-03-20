@@ -10,8 +10,8 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
-@RunWith(RobolectricTestRunner::class)
-@Config(manifest = Config.NONE)
+    @RunWith(RobolectricTestRunner::class)
+    @Config(manifest = Config.NONE)
 class BnazTest {
 
     @Before
@@ -21,7 +21,7 @@ class BnazTest {
             traceEnabled = true,
                 dateTimePattern = "yyyy-MM-dd",
                 showThreadId = true,
-                productionLogDisabled = true
+                logEnabled = true
         ))
     }
 
@@ -35,21 +35,21 @@ class BnazTest {
     @Test
     fun logThrowable() {
         val t = Throwable("test")
-        Bnaz.setup(BnazConfig(false, null, showThreadId = false, productionLogDisabled = false))
+        Bnaz.setup(BnazConfig(false, null, showThreadId = false, logEnabled = false))
         val log = Bnaz.generateLogMsg(t)
         assertEquals(t.stackTraceToString(), log)
     }
 
     @Test
     fun logDatePattern() {
-        Bnaz.setup(BnazConfig(false, null, showThreadId = false, productionLogDisabled = false))
+        Bnaz.setup(BnazConfig(false, null, showThreadId = false, logEnabled = false))
         val log = Bnaz.datePattern("HH:mm").generateLogMsg("test pattern")
         assertEquals("test pattern\nat ${SimpleDateFormat("HH:mm").format(Date())}", log)
     }
 
     @Test
     fun logArray() {
-        Bnaz.setup(BnazConfig(false, null, showThreadId = false, productionLogDisabled = false))
+        Bnaz.setup(BnazConfig(false, null, showThreadId = false, logEnabled = false))
         val log = Bnaz.generateLogMsg(arrayOf(1,2,3,4,5))
         assertEquals("[1, 2, 3, 4, 5]", log)
     }

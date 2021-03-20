@@ -53,7 +53,7 @@ class ProtoBufTest {
     }
 
     fun decodeHex() {
-        val decodedResult = ProtoBuf.decode("0a0d08f92712024f4b188a8c06204e120774657374696e67")
+            val decodedResult = ProtoBuf.decode("0a0d08f92712024f4b188a8c06204e120774657374696e67")
         val expectedResult = mapOf(
             Pair(1, mapOf(Pair(1, 5113), Pair(2, "OK"), Pair(3, 99850), Pair(4, 78))),
             Pair(2, "testing")
